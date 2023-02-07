@@ -34,8 +34,31 @@ function App() {
             })
         }
     }
+    //console.log(myArray)
 
-    console.log(myArray)
+    const arrayOfActualDate = [
+        {year: 2023, month: 2, day: 1},
+        {year: 2023, month: 2, day: 2},
+        {year: 2023, month: 2, day: 3},
+        {year: 2023, month: 2, day: 4},
+        {year: 2023, month: 2, day: 5},
+        {year: 2023, month: 2, day: 6},
+        {year: 2023, month: 2, day: 7},
+        {year: 2023, month: 2, day: 8},
+        {year: 2023, month: 2, day: 9},
+        {year: 2023, month: 2, day: 10},
+        {year: 2023, month: 2, day: 11},
+        {year: 2023, month: 2, day: 12},
+        {year: 2023, month: 2, day: 13},
+        {year: 2023, month: 2, day: 14},
+        {year: 2023, month: 2, day: 15},
+        {year: 2023, month: 2, day: 16},
+        {year: 2023, month: 2, day: 17},
+        {year: 2023, month: 2, day: 18},
+        {year: 2023, month: 2, day: 19},
+        {year: 2023, month: 2, day: 20},
+    ]
+
 
     const [posts, setPosts] = React.useState([])
 
@@ -50,6 +73,31 @@ function App() {
     }, [])
 
     console.log(posts)
+
+
+
+    function removeMatches(arr1, arr2) {
+        const result = []
+
+        for (let i = 0; i < arr1.length; i++) {
+            let flag = false;
+            for (let j = 0; j < arr2.length; j++) {
+                if (JSON.stringify(arr1[i]) === JSON.stringify(arr2[j])) {
+                    flag = false
+                    break
+                }
+                else {
+                    flag = true
+                }
+            }
+            if (flag) {
+                result.push(arr1[i])
+            }
+        }
+        return result
+    }
+
+    console.log(removeMatches(myArray, arrayOfActualDate))
 
   return (
     <div className="app__container">
