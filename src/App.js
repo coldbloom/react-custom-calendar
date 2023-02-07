@@ -6,6 +6,7 @@ import {createYear} from "./utils/helpers/createYear";
 import {useEffect} from "react";
 import React from "react";
 import axios from "axios";
+import MyCalendar from "./components/Calendar/MyCalendar";
 
 function App() {
 
@@ -97,11 +98,12 @@ function App() {
         return result
     }
 
-    console.log(removeMatches(myArray, arrayOfActualDate))
+    const disabledDays = removeMatches(myArray, arrayOfActualDate)
 
   return (
     <div className="app__container">
       Calendar
+      <MyCalendar disabledDays={disabledDays}/>
     </div>
   );
 }
