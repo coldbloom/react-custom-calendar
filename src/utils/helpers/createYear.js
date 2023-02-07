@@ -6,16 +6,13 @@ export const createYear = (yearProp, monthNumberProp, locale = 'default') => {
     const monthCount = 12
     const today = createDate()
 
-    const year = (yearProp !== null) ? yearProp : today.year
-    const monthNumber = (monthNumberProp !== null) ? monthNumberProp : today.monthNumber
+    const year = (yearProp !== undefined) ? yearProp : today.year
+    const monthNumber = (monthNumberProp !== undefined) ? monthNumberProp : today.monthNumber
 
     const month = createMonth(locale, new Date(year, monthNumber - 1))
 
-    console.log(month)
-
     const getMonthDays = (monthIndex) => {
-        createMonth(locale, new Date(year, monthIndex)).createMonthDays()
-        //console.log(createMonth(locale, new Date(year, monthIndex)).createMonthDays())
+        return createMonth(locale, new Date(year, monthIndex)).createMonthDays()
     }
 
     const createYearMonthes = () => {

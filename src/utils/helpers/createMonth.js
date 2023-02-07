@@ -9,8 +9,6 @@ export const createMonth = (local = null, dat = null) => {
     const d = createDate(locale, date)
     const {month: monthName, year, monthNumber, monthIndex} = d
 
-    console.log(d, 'monthName')
-
     const getDay = (dayNumber) => createDate(locale, new Date(year, monthIndex, dayNumber))
 
     const createMonthDays = () => {
