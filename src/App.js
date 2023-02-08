@@ -7,6 +7,8 @@ import {useEffect} from "react";
 import React from "react";
 import axios from "axios";
 import MyCalendar from "./components/Calendar/MyCalendar";
+import Flatpickr from "react-flatpickr";
+import FlatPicker from "./components/FlatPicker/FlatPicker";
 
 function App() {
 
@@ -104,6 +106,7 @@ function App() {
     <div className="app__container">
       Calendar
       <MyCalendar disabledDays={disabledDays}/>
+        <FlatPicker />
     </div>
   );
 }

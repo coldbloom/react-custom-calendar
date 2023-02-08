@@ -125,18 +125,23 @@ const MyCalendar = ({disabledDays}) => {
         day: 31
     }
 
+    const [open, setOpen] = React.useState(false)
+
     return (
         <div>
-            <Calendar
-                value={selectedDay}
-                onChange={setSelectedDay}
-                disabledDays={disabledDays} // here we pass them
-                onDisabledDayError={handleDisabledSelect} // handle error
-                shouldHighlightWeekends
-                locale={myCustomLocale} // custom locale object
-                minimumDate={minimumDate}
-                maximumDate={maximumDate}
-            />
+            <button onClick={() => setOpen(!open)}>Button</button>
+            {open &&
+                <Calendar
+                    value={selectedDay}
+                    onChange={setSelectedDay}
+                    disabledDays={disabledDays} // here we pass them
+                    onDisabledDayError={handleDisabledSelect} // handle error
+                    shouldHighlightWeekends
+                    locale={myCustomLocale} // custom locale object
+                    minimumDate={minimumDate}
+                    maximumDate={maximumDate}
+                />
+            }
         </div>
     );
 };
